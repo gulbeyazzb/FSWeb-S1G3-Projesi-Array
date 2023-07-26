@@ -159,7 +159,7 @@ function ismeGoreFiltrele(tatlar, filtre) {
   }
   return yeni_dizi;
 }
-console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
+//console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"));
 /* ALIŞTIRMA */
 
 /* ALIŞTIRMA 1: Bir dizideki ortalama kelime sayısını döndüren bir fonksiyon yazın. Bu işlevi orijinalTatlar dizisinde test etmelisiniz, ancak bunu herhangi bir dizi için de kullanabilmelisiniz.
@@ -172,7 +172,20 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(dizi) {}
+function ortalamaKelimeSayisi(dizi) {
+  let toplamKelimeSayisi = 0;
+  let sonuc = 0;
+  for (let i = 0; i < dizi.length; i++) {
+    let kelime_sayisi = 1;
+    for (let harf of dizi[i]) {
+      if (harf == " ") {
+        kelime_sayisi++;
+      }
+    }
+    sonuc = (toplamKelimeSayisi += kelime_sayisi) / dizi.length;
+  }
+  return sonuc;
+}
 console.log(ortalamaKelimeSayisi(orijinalTatlar));
 /* ALIŞTIRMA 2:
 Firma mevcut tatların yanında artık mevsimlik lezzetler ve hatta bölgesel lezzetler de sunmaktadır. Toplam 25 lezzet aromasını
