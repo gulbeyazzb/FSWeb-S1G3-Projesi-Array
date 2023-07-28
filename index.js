@@ -198,48 +198,62 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 
   Örneğin: rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar) çalıştırıldığında ["Kestane", "Ballı Badem,"..."Hindistan Cevizi", "Kuru üzüm"].
 */
+const yeniTatlar = [
+  "Badem",
+  "Ballı Badem",
+  "Fıstık Ezmesi",
+  "Profiterol",
+  "Madlen Çikolata",
+];
 
-function rastgeleTatlar(/*kod buraya*/) {
-  /*kod buraya*/
+const mevsimlikTatlar = [
+  "Pekan",
+  "Kaju",
+  "Çikolatalı Mousse",
+  "Fransız Vanilyası",
+  "Yumurta",
+  "Alman çikolatası",
+  "Kek üzerine krema",
+  "Hindistan Cevizi",
+  "Kaymaklı Biskuvi",
+  "Beyaz Çikolata",
+  "Mango",
+];
+
+const bolgeselTatlar = [
+  "Kaymak",
+  "Karpuz",
+  "Karadut",
+  "Turunç",
+  "Portakal",
+  "Yogurt",
+  "Krem Peynir",
+  "Kakao",
+  "Karamel macchiato",
+  "Kuru üzüm",
+  "Peynir",
+  "Karamel",
+];
+
+function rastgeleTatlar(dizi1, dizi2, dizi3, dizi4) {
+  const rastgeleTatlar = [];
+  for (let i = 0; i < 25; i++) {
+    const random_dizi1 = Math.floor(Math.random(dizi1) * dizi1.length);
+    const random_dizi2 = Math.floor(Math.random(dizi2) * dizi2.length);
+    const random_dizi3 = Math.floor(Math.random(dizi3) * dizi3.length);
+    const random_dizi4 = Math.floor(Math.random(dizi4) * dizi4.length);
+    rastgeleTatlar[i] = dizi1[random_dizi1].concat(
+      " " + dizi2[random_dizi2],
+      " " + dizi3[random_dizi3],
+      " " + dizi4[random_dizi4]
+    );
+  }
+  return rastgeleTatlar;
 }
-
+console.log(
+  rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar)
+);
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const yeniTatlar = [
-//   "Badem",
-//   "Ballı Badem",
-//   "Fıstık Ezmesi",
-//   "Profiterol",
-//   "Madlen Çikolata"
-// ]
-
-// const mevsimlikTatlar = [
-// "Pekan",
-// "Kaju",
-// "Çikolatalı Mousse",
-// "Fransız Vanilyası",
-// "Yumurta",
-// "Alman çikolatası",
-// "Kek üzerine krema",
-// "Hindistan Cevizi",
-// "Kaymaklı Biskuvi",
-// "Beyaz Çikolata",
-// "Mango"
-// ]
-
-// const bolgeselTatlar = [
-// "Kaymak",
-// "Karpuz",
-// "Karadut",
-// "Turunç",
-// "Portakal",
-// "Yogurt",
-// "Krem Peynir",
-// "Kakao",
-// "Karamel macchiato",
-// "Kuru üzüm",
-// "Peynir",
-// "Karamel"
-// ]
 
 /* Lütfen bu satırın altındaki hiçbir şeyi değiştirmeyin */
 function sa() {
